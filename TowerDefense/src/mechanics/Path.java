@@ -10,11 +10,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- *
- * @author Shaan
- */
-public class Path {
     SpaceGrid grid;
     List<Point> solution;
     int board[][];
