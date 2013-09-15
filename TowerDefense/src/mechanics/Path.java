@@ -10,6 +10,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
+public class Path {
+
     SpaceGrid grid;
     List<Point> solution;
     int board[][];
@@ -37,11 +40,11 @@ import java.util.Set;
         for (Point explorer : frontier){
             for (Point neighbor : neighbors(explorer)){
                 if (boardValue(neighbor) > boardValue(explorer) + 1){
-                    frontier.remove(explorer);
                     board[neighbor.x][neighbor.y] = boardValue(explorer) + 1;
                     frontier.add(neighbor);
                 }
             }
+            frontier.remove(explorer);
         }
         
         // If found a path to the end
