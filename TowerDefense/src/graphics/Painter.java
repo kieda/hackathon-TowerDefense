@@ -17,7 +17,7 @@ public class Painter {
     private static Graphics2D g2d;
     private static List<Renderable> renderables = new ArrayList<>(16);
     private static int w, h;
-    public static void addRenderable(Renderable r){
+    public static void add(Renderable r){
         renderables.add(r);
     }
     
@@ -43,7 +43,7 @@ public class Painter {
      * cleans the graphics
      */
     public static void clean(){
-        g2d.fillRect(0, 0, w, h);
+        g2d.fillRect(0, 0, ScreenInfo.SCREEN_WIDTH, ScreenInfo.SCREEN_HEIGHT);
     }
     
 //    public static void setColor(Color c){
@@ -56,5 +56,6 @@ public class Painter {
             r.render(g2d);
         }
         g.drawImage(bi,null,0,0);
+        clean();
     }
 }

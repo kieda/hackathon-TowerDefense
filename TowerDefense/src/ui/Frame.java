@@ -39,7 +39,9 @@ public class Frame {
     }
     
     public static void update(){
+        
         frame.repaint();
+
     }
     
     public static JFrame getFrame(){

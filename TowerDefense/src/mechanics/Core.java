@@ -2,6 +2,7 @@ package mechanics;
 
 import graphics.Painter;
 import graphics.Renderable;
+import graphics.Sprite;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import ui.Frame;
@@ -32,13 +33,6 @@ public class Core {
     public static void init(){
         Frame.init();
         new Thread(main_loop).start();
-        Painter.addRenderable(new Renderable() {
-            @Override
-            public void render(Graphics2D g) {
-                g.setColor(Color.BLACK);
-                g.drawLine(0, 0, 500, 500);
-            }
-        });
     }
     
     private static void update() {

@@ -3,6 +3,7 @@ package graphics;
 
 import error.TotalError;
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,9 +14,12 @@ import mechanics.BoardPoint;
 public class Sprite implements Renderable, BoardPoint{
     private static BufferedImage bi;
     
-    private float x, y;
+    private float x, y, theta;
     
     private int width, height;
+    private int imgW, imgH;
+    
+    private AffineTransform af;
     
     public Sprite(String pathLoc){
         try{
@@ -24,9 +28,18 @@ public class Sprite implements Renderable, BoardPoint{
             e.printStackTrace();
             new TotalError("Sprite file "+pathLoc+" could not be located.");
         }
+        af = new AffineTransform();
+        
+        imgW = bi.getWidth();
+        imgH = bi.getHeight();
     }
     @Override public void render(Graphics2D g) {
-        g.drawImage(bi, null, (int)(x-(width>>1)), (int)(y-(height>>1)));
+        af.setToIdentity();
+        af.setToRotation(theta, imgW>>1, imgH>>1);
+        af.setToScale((double)width/imgW, (double)height/imgH);
+        af.setToTranslation(x-(width>>1), y-(height>>1));
+        
+        g.drawImage(bi, af, null);
     }
 
     @Override public float getX() {
@@ -35,5 +48,17 @@ public class Sprite implements Renderable, BoardPoint{
 
     @Override public float getY() {
         return y;
+    }
+    
+    public void setX(float f){
+        this.x = f;
+    }
+    public void setY(float f){
+        this.y = f;
+    }
+    
+    public void move(float x, float y){
+        this.x += x;
+        this.y += y;
     }
 }
