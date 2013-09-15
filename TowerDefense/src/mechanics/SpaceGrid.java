@@ -1,12 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package mechanics;
 
 /**
  * @author Shaan
  */
-public class SpaceGrid {
-    
+public interface SpaceGrid {
+    /**
+     * returns true iff this position on the grid is occupied by a tower.
+     * 
+     * @param x the x position on the grid
+     * @param y the y position on the grid
+     * @return see above.
+     */
+    boolean isOccupied(int x, int y);
 }
