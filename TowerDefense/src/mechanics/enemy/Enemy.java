@@ -4,7 +4,6 @@
  */
 package mechanics.enemy;
 
-import java.awt.Point;
 import mechanics.BoardPoint;
 import mechanics.Tower;
 import mechanics.gameplay.DmgValues;
@@ -13,13 +12,13 @@ import mechanics.gameplay.DmgValues;
  *
  * @author Shaan
  */
-public class Enemy implements BoardPoint{
+public abstract class Enemy implements BoardPoint{
     private float hp;
     private float speed;
     public float x;
     public float y;
     
-    public Enemy(float h, float s, float dm){
+    public Enemy(float h, float s){
         hp = h;
         speed = s;
         x=0;
@@ -30,8 +29,9 @@ public class Enemy implements BoardPoint{
         return hp == 0;
     }
     
+    public abstract String getName();
     public void takeDamage(Tower tower){
-        hp -= tower.damage*DmgValues.getDamageModifier(Tower.towerName,"1"); 
+        hp -= tower.damage*DmgValues.getDamageModifier(Tower.towerName, getName()); 
     }
     
     public float getHP(){
@@ -43,9 +43,15 @@ public class Enemy implements BoardPoint{
     }
 
     @Override
-    public Point getPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float getX() {
+        return x;
     }
+
+    @Override
+    public float getY() {
+        return y;
+    }
+    
     
     
 }
