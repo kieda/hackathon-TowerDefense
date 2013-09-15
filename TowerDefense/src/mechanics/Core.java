@@ -3,6 +3,7 @@ package mechanics;
 import graphics.Painter;
 import graphics.Renderable;
 import java.awt.Color;
+import java.awt.Graphics2D;
 import ui.Frame;
 
 /**
@@ -33,9 +34,9 @@ public class Core {
         new Thread(main_loop).start();
         Painter.addRenderable(new Renderable() {
             @Override
-            public void render() {
-                Painter.setColor(Color.BLACK);
-                Painter.gDrawLine(0, 0, 500, 500);
+            public void render(Graphics2D g) {
+                g.setColor(Color.BLACK);
+                g.drawLine(0, 0, 500, 500);
             }
         });
     }

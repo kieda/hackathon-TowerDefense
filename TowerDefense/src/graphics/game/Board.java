@@ -1,11 +1,17 @@
 package graphics.game;
 
+import graphics.Renderable;
+import java.awt.Graphics2D;
+import util.Algos;
+
 /**
  * the board
  * @author Shaan
  */
-public class Board {
+public class Board implements Renderable{
     private Cell[] cells;
+    
+    private int width;
     
     /**
      * 
@@ -16,6 +22,16 @@ public class Board {
         assert xnum>0 && ynum >0;
         cells = new Cell[xnum*ynum];
         
+        width = xnum;
         
+    }
+
+    @Override public void render(Graphics2D g) {
+        for(Cell c : cells)
+            c.render(g);
+    }
+    
+    public Cell indexOf(int x, int y){
+        return cells[Algos.indexOf(x, y, width)];
     }
 }
