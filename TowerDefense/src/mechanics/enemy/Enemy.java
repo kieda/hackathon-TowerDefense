@@ -2,16 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package mechanics;
+package mechanics.enemy;
 
 import java.awt.Point;
+import mechanics.BoardPoint;
+import mechanics.Tower;
 import mechanics.gameplay.DmgValues;
 
 /**
  *
  * @author Shaan
  */
-public class Enemy {
+public class Enemy implements BoardPoint{
     private float hp;
     private float speed;
     public float x;
@@ -38,6 +40,11 @@ public class Enemy {
     
     public float getSpeed(){
         return speed;
+    }
+
+    @Override
+    public Point getPosition() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
