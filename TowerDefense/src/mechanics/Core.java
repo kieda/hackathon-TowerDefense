@@ -1,10 +1,7 @@
 package mechanics;
 
-import graphics.Painter;
-import graphics.Renderable;
-import graphics.Sprite;
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.util.Timer;
+import java.util.TimerTask;
 import ui.Frame;
 
 /**
@@ -17,6 +14,7 @@ public class Core {
             
     private static Runnable main_loop = new Runnable() {
         @Override public void run() {
+            st_time = millis = System.currentTimeMillis();
             while(true){
                 update();
                 
@@ -37,6 +35,40 @@ public class Core {
     
     private static void update() {
         Frame.update();
+        dt = -millis + (millis = System.currentTimeMillis()); 
     }
 
+    /**
+     * start time
+     */
+    private static long st_time;
+    /**
+     * current time
+     */
+    private static long millis;
+    
+    /**
+     * time since last update
+     */
+    private static long dt = SLEEP;//placeholder to prevent errors
+    
+    /**
+     * returns the current time, from the start time.
+     */
+    public static long getTime(){
+        return millis-st_time;
+    }
+    
+    /**
+     * returns the time that has elapsed since the last frame
+     */
+    public static long getDT(){
+        return dt;
+    }
+    
+    private static Timer taskHandler = new Timer();
+    
+    public static void post(TimerTask tt, long delay){
+        taskHandler.schedule(tt, delay);
+    }
 }

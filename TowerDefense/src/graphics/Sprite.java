@@ -35,10 +35,10 @@ public class Sprite implements Renderable, BoardPoint{
     }
     @Override public void render(Graphics2D g) {
         af.setToIdentity();
-        af.setToRotation(theta, imgW>>1, imgH>>1);
-        af.setToScale((double)width/imgW, (double)height/imgH);
-        af.setToTranslation(x-(width>>1), y-(height>>1));
         
+//        af.setToScale((double)width/imgW, (double)height/imgH);
+        af.rotate(theta, x, y);
+        af.translate(x-(imgW>>1), y-(imgH>>1));
         g.drawImage(bi, af, null);
     }
 
@@ -60,5 +60,9 @@ public class Sprite implements Renderable, BoardPoint{
     public void move(float x, float y){
         this.x += x;
         this.y += y;
+    }
+    
+    public void rotate(float theta){
+        this.theta += theta;
     }
 }

@@ -14,7 +14,11 @@ import mechanics.enemy.Enemy;
 public class Tower extends Square{
     private final float range;
     private final float dmg;
-    private final float period;
+    
+    /**
+     * interval between shots
+     */
+    private final int period;
     
     public float angle;
     
@@ -24,7 +28,7 @@ public class Tower extends Square{
     {
         return towerName;
     }
-    public Tower(String towerName, float range, float period, float dmg, int x, int y)
+    public Tower(String towerName, float range, int period, float dmg, int x, int y)
     {
         super(x,y);
         this.towerName = towerName;
@@ -45,7 +49,7 @@ public class Tower extends Square{
     {
         return dmg;
     }
-    public float getPeriod()
+    public int getPeriod()
     {
         return period;
     }
