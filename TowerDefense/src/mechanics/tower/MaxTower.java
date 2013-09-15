@@ -2,16 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package mechanics;
+package mechanics.tower;
 
 /**
  *
  * @author ponte
  * 
  */
-public class ShaanTower extends Tower {
-    public ShaanTower()
+public class MaxTower extends Tower {
+    public MaxTower()
     {
-        super("shaan", 0.0f, 0.0f, 0.0f);
+        super("max", 0.0f, 0.0f, 0.0f);
     }
 }

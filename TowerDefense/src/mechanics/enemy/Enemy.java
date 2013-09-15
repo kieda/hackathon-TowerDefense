@@ -5,7 +5,7 @@
 package mechanics.enemy;
 
 import mechanics.BoardPoint;
-import mechanics.Tower;
+import mechanics.tower.Tower;
 import mechanics.gameplay.DmgValues;
 
 /**
