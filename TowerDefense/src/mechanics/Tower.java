@@ -4,6 +4,8 @@
  */
 package mechanics;
 
+import mechanics.enemy.Enemy;
+
 /**
  * @author Shaan
  */
