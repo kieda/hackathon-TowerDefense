@@ -10,8 +10,8 @@ package mechanics.enemy;
  */
 public class Enemy4 extends Enemy{
     private static String name = "4";
-    public Enemy4(float h, float s){
-        super(h,s);
+    public Enemy4(){
+        super(25f,4f);
     }
     
     @Override
