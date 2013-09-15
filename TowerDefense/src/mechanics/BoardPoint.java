@@ -8,8 +8,6 @@ import java.awt.Point;
 public interface BoardPoint {
     /**
      * returns the current position on this board
-     * 
-     * 
      */
     Point getPosition();
 }

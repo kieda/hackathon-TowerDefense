@@ -9,5 +9,5 @@ package mechanics;
  * @author Shaan
  */
 public class Path {
-    
+    public Square[] path;
 }
