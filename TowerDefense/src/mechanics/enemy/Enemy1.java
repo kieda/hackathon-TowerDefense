@@ -11,6 +11,6 @@ package mechanics.enemy;
 public class Enemy1 extends Enemy {
 
     public Enemy1() {
-        super(100f, 1f, "1");
+        super(100f, 1f, "1", 10.0f);
     }
 }
