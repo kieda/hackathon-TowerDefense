@@ -1,22 +1,24 @@
 package mechanics;
 
 /**
- *
  * @author Shaan
  */
 public class Square {
-    private int x, y;
+    private int x;
+    private int y;
+
+    public Square(int xco, int yco) {
+        this.x = xco;
+        this.y = yco;
+    }
     
-    public Square(int x, int y){this.x=x; this.y=y;}
     
-    /**
-     * returns the x position of this square
-     * @return 
-     */
-    public int getX(){return x;}
-    /**
-     * returns the y position of this square
-     * @return 
-     */
-    public int getY(){return y;}
+    public int getX(){
+        return this.x;
+    }
+    
+    public int getY(){
+        return this.y;
+    }
+    
 }

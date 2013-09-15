@@ -20,7 +20,7 @@ public class Frame {
      * 
      * Ensures frame != null, panel != null, and panel is a component of frame.
      */
-    private static void init(){
+    public static void init(){
         frame = new JFrame();
         panel = new JPanel(true);
         
