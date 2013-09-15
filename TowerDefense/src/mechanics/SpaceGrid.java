@@ -12,4 +12,8 @@ public interface SpaceGrid {
      * @return see above.
      */
     boolean isOccupied(int x, int y);
+    
+    int getWidth();
+    
+    int getHeight();
 }
