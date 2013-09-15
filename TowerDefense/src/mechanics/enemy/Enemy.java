@@ -30,8 +30,9 @@ public abstract class Enemy implements BoardPoint{
     }
     
     public abstract String getName();
+    
     public void takeDamage(Tower tower){
-        hp -= tower.damage*DmgValues.getDamageModifier(Tower.towerName, getName()); 
+        hp -= tower.getDmg()*DmgValues.getDamageModifier(Tower.getName(), getName()); 
     }
     
     public float getHP(){

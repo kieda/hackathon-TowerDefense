@@ -12,7 +12,7 @@ import mechanics.enemy.*;
  */
 public class Wave {
 
-    private Enemy[] getWave1() {
+    public Enemy[] getWave1() {
         return new Enemy[]{
             new Enemy1(),
             new Enemy1(),
@@ -22,7 +22,7 @@ public class Wave {
         };
     }
 
-    private Enemy[] getWave2() {
+    public Enemy[] getWave2() {
         return new Enemy[]{
             new Enemy2(),
             new Enemy2(),
@@ -32,7 +32,7 @@ public class Wave {
         };
     }
 
-    private Enemy[] getWave3() {
+    public Enemy[] getWave3() {
         return new Enemy[]{
             new Enemy3(),
             new Enemy3(),
@@ -42,7 +42,7 @@ public class Wave {
         };
     }
 
-    private Enemy[] getWave4() {
+    public Enemy[] getWave4() {
         return new Enemy[]{
             new Enemy4(),
             new Enemy4(),
