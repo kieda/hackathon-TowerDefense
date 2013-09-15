@@ -40,11 +40,11 @@ public class Path {
         for (Point explorer : frontier){
             for (Point neighbor : neighbors(explorer)){
                 if (boardValue(neighbor) > boardValue(explorer) + 1){
-                    frontier.remove(explorer);
                     board[neighbor.x][neighbor.y] = boardValue(explorer) + 1;
                     frontier.add(neighbor);
                 }
             }
+            frontier.remove(explorer);
         }
         
         // If found a path to the end
