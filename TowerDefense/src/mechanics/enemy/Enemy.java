@@ -19,13 +19,15 @@ public class Enemy implements BoardPoint {
     public float x;
     public float y;
     private String enemyName;
+    private float hitRadius;
 
-    public Enemy(float h, float s, String name) {
+    public Enemy(float h, float s, String name, float hr) {
         hp = h;
         speed = s;
         x = 0;
         y = 0;
         enemyName = name;
+        hitRadius = hr;
     }
 
     public boolean isAlive() {
@@ -43,6 +45,10 @@ public class Enemy implements BoardPoint {
     public float getSpeed() {
         return speed;
     }
+    
+    public float getHitRadius(){
+        return hitRadius;
+    }
 
     @Override
     public float getX() {
@@ -53,4 +59,5 @@ public class Enemy implements BoardPoint {
     public float getY() {
         return y;
     }
+    
 }
