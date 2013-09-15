@@ -4,20 +4,19 @@
  */
 package mechanics.tower;
 
+import mechanics.Square;
 import mechanics.enemy.Enemy;
 
 /**
  * @author Shaan
  */
 
-public class Tower {
+public class Tower extends Square{
     private final float range;
     private final float dmg;
     private final float period;
     
     public float angle;
-    public float x;
-    public float y;
     
     private String towerName;
     
@@ -25,8 +24,9 @@ public class Tower {
     {
         return towerName;
     }
-    public Tower(String towerName, float range, float period, float dmg)
+    public Tower(String towerName, float range, float period, float dmg, int x, int y)
     {
+        super(x,y);
         this.towerName = towerName;
         this.range = range;
         this.period = period;
@@ -52,8 +52,9 @@ public class Tower {
     
     public boolean inRange(float x, float y)
     {
-        float ydiff = y-this.y;
-        float xdiff = x-this.x;
+        float ydiff = y-getY();
+        float xdiff = x-getX();
         return Math.sqrt(ydiff*ydiff + xdiff*xdiff) <= range;
     }
+    
 }

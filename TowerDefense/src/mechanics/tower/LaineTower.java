@@ -10,8 +10,8 @@ package mechanics.tower;
  * 
  */
 public class LaineTower extends Tower {
-    public LaineTower()
+    public LaineTower(int x, int y)
     {
-        super("laine", 0.0f, 0.0f, 0.0f);
+        super("laine", 0.0f, 0.0f, 0.0f,x,y);
     }
 }
