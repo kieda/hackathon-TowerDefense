@@ -3,6 +3,7 @@ package graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import util.ScreenInfo;
 
 /**
  * @author Shaan
@@ -12,9 +13,10 @@ public class Painter {
     private static Graphics2D g2d;
     
     public static void addRenderable(Renderable r){
+        
     }
     public static void init(){
-        bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        bi = new BufferedImage(ScreenInfo.GAME_WIDTH, ScreenInfo.GAME_HEIGHT, BufferedImage.TYPE_INT_ARGB);
         g2d = bi.createGraphics();
     }
     public static void gDrawImage(Image bi, int x, int y){

@@ -24,7 +24,13 @@ public class Frame {
         frame = new JFrame();
         panel = new JPanel(true);
         
+        frame.setBounds(null);
+        
+        frame.setVisible(true);
     }
+    
+    public static void update(){}
+    
     public static JFrame getFrame(){
         if(frame==null) init();
         return frame;
@@ -32,5 +38,9 @@ public class Frame {
     public static JPanel getPanel(){
         if(frame==null) init();
         return panel;
+    }
+    
+    public static void main(String[] args) {
+        Frame.init();
     }
 }
