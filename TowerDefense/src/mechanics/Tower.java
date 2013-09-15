@@ -11,16 +11,27 @@ import mechanics.enemy.Enemy;
  */
 
 public class Tower {
-    private float range;
-    private float dmg;
-    private float period;
+    private final float range;
+    private final float dmg;
+    private final float period;
     
     public float angle;
     public float x;
     public float y;
     
+    private String towerName;
     
-    
+    public String getName()
+    {
+        return towerName;
+    }
+    public Tower(String towerName, float range, float period, float dmg)
+    {
+        this.towerName = towerName;
+        this.range = range;
+        this.period = period;
+        this.dmg = dmg;
+    }
     public boolean inRange(Enemy e){
         //todo implement
         return false;
