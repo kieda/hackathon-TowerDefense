@@ -1,5 +1,8 @@
 package mechanics;
 
+import graphics.Painter;
+import graphics.Renderable;
+import java.awt.Color;
 import ui.Frame;
 
 /**
@@ -8,13 +11,37 @@ import ui.Frame;
 public class Core {
     private Core(){}
     
-    private Runnable main_loop;
+    public static final int SLEEP = 10;
+            
+    private static Runnable main_loop = new Runnable() {
+        @Override public void run() {
+            while(true){
+                update();
+                
+                try {
+                    Thread.currentThread().sleep(SLEEP);
+                } catch (InterruptedException e) {}
+            }
+        }
+    };
     
     /**
      * initializes and runs the main loop.
      */
     public static void init(){
         Frame.init();
-        
+        new Thread(main_loop).start();
+        Painter.addRenderable(new Renderable() {
+            @Override
+            public void render() {
+                Painter.setColor(Color.BLACK);
+                Painter.gDrawLine(0, 0, 500, 500);
+            }
+        });
     }
+    
+    private static void update() {
+        Frame.update();
+    }
+
 }
