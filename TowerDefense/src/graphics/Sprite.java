@@ -12,7 +12,7 @@ import mechanics.BoardPoint;
 
 
 public class Sprite implements Renderable, BoardPoint{
-    private static BufferedImage bi;
+    private BufferedImage bi;
     
     private float x, y, theta;
     

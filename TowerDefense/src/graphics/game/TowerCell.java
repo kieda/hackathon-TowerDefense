@@ -41,4 +41,5 @@ public abstract class TowerCell extends Cell {
     }
     
     protected abstract void paint(byte state, Graphics2D g);
+    
 }

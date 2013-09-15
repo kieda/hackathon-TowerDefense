@@ -52,8 +52,4 @@ public class Frame {
         if(frame==null) init();
         return panel;
     }
-    
-    public static void main(String[] args) {
-        Frame.init();
-    }
 }

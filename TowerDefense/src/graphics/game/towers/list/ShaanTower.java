@@ -1,10 +1,10 @@
 
 package graphics.game.towers.list;
 
-import graphics.game.towers.SpriteTower;
+import graphics.game.towers.ImgTower;
 
 
-public class ShaanTower extends SpriteTower{
+public class ShaanTower extends ImgTower{
     public ShaanTower(){
         super("./towers/shaansies.png");
     }

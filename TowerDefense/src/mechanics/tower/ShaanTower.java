@@ -10,8 +10,7 @@ package mechanics.tower;
  * 
  */
 public class ShaanTower extends Tower {
-    public ShaanTower(int x, int y)
-    {
-        super("shaan", 0.0f, 0.0f, 0.0f,x,y);
+    public ShaanTower(int x, int y){
+        super("shaan", 0.0f, 0, 0.0f,x,y);
     }
 }

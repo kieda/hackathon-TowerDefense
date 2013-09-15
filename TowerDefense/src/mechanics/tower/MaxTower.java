@@ -10,8 +10,7 @@ package mechanics.tower;
  * 
  */
 public class MaxTower extends Tower {
-    public MaxTower(int x, int y)
-    {
-        super("max", 0.0f, 0.0f, 0.0f,x,y);
+    public MaxTower(int x, int y){
+        super("max", 0.0f, 0, 0.0f,x,y);
     }
 }

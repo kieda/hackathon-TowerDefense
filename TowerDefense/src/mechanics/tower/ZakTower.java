@@ -10,8 +10,7 @@ package mechanics.tower;
  * 
  */
 public class ZakTower extends Tower {
-    public ZakTower(int x, int y)
-    {
-        super("zak", 0.0f, 0.0f, 0.0f,x,y);
+    public ZakTower(int x, int y) {
+        super("zak", 0.0f, 0, 0.0f,x,y);
     }
 }

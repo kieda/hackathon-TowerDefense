@@ -28,6 +28,10 @@ public class Tower extends Square{
     {
         return towerName;
     }
+    /**
+     * note : period is an integer in milliseconds. (This is because the system 
+     * clock is in discreet units)
+     */
     public Tower(String towerName, float range, int period, float dmg, int x, int y)
     {
         super(x,y);

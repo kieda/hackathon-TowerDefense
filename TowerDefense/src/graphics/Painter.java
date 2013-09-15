@@ -28,34 +28,26 @@ public class Painter {
     public static void init(){
         bi = new BufferedImage(ScreenInfo.GAME_WIDTH, ScreenInfo.GAME_HEIGHT, BufferedImage.TYPE_INT_ARGB);
         g2d = bi.createGraphics();
-        
     }
-    
-//    public static void gDrawImage(Image bi, int x, int y){
-//        g2d.drawImage(bi, x, y, null);
-//    }
-//    
-//    public static void gDrawLine(int x1, int y1, int x2, int y2){
-//        g2d.drawLine(x1, y1, x2, y2);
-//    }
     
     /**
      * cleans the graphics
      */
     public static void clean(){
-        g2d.fillRect(0, 0, ScreenInfo.SCREEN_WIDTH, ScreenInfo.SCREEN_HEIGHT);
+        //fix this shit after hackathon is done
+        g2d.setColor(Color.WHITE);
+        g2d.fillRect(0, 0, ScreenInfo.GAME_WIDTH, ScreenInfo.GAME_HEIGHT);
     }
     
-//    public static void setColor(Color c){
-//        g2d.setColor(c);
-//    }
-    
     public static void paint(Graphics2D g){
-//        g2d = bi.createGraphics();
+        clean();
         for(Renderable r : renderables) {
             r.render(g2d);
         }
-        g.drawImage(bi,null,0,0);
-        clean();
+        g.setClip(null);
+        
+        g2d.setColor(Color.red);
+        g2d.drawLine(0, 0, ScreenInfo.GAME_WIDTH, ScreenInfo.GAME_HEIGHT);
+        g.drawImage(bi,0,0,ScreenInfo.FRAME_WIDTH, ScreenInfo.FRAME_HEIGHT, null);
     }
 }
