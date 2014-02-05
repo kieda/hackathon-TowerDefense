@@ -1,0 +1,44 @@
+short term : 
+
+Alternative method of play : have players connect to a 'server' object (similar
+to a core), and have the server object delegate the stats of each player. 
+
+(Give the player a handle on creation, internally from the server. The handle
+also serves as a callback from the current game.)
+
+
+Finish the Game Board. The Game Board should contain all enemies, and each 
+player should be registered to a game board. 
+
+We verify an enemies death by asserting that the player's current board contains
+the enemy killed.
+
+    note : we do NOT have to check that the player owns the DamageDealer that 
+           killed the enemy, since whenever we create a DamageDealer, it can 
+           only be made within a player. 
+
+    note : we do NOT check that the DamageDealer belongs to the player's board. 
+           This is because there may be a DamageDealer that can last across 
+           several different games. 
+
+           Instead, we disarm the DamageDealer when necessary (like at the end 
+           of a round, or when a tower is attacked and dies).
+
+Each time we make a BoardPlacable, ensure it is placed on the board.
+
+Use the pathfinding algorithm to generate a path for the characters. Then, move
+the characters along the path during the Board's update() phase.
+
+i.e. generate a path that (e = Enemy[]) will follow. If e.length = 0, remove it
+from our list. During update(), all e move along their path.
+
+We split the positions in the board up in terms of their squares. Once an enemy
+moves from being in one square to another, we 'register' the enemy in being in
+the new square.
+
+
+longer term : 
+Have 'attackers', which generate DamageDealers in the form of Projectiles. Then, 
+we have Projectiles move along a set path, and when they reach the end they 
+attack the enemy. 
+
